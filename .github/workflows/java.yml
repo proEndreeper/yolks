@@ -45,4 +45,4 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ env.REPO }}/yolks:java_${{ matrix.tag }}
+            ghcr.io/${{ env.REPO }}:java_${{ matrix.tag }}

@@ -40,4 +40,4 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-             ghcr.io/${{ env.REPO }}/yolks:games_${{ matrix.game }}
+             ghcr.io/${{ env.REPO }}:games_${{ matrix.game }}
