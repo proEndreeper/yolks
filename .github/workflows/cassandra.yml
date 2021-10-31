@@ -19,6 +19,9 @@ jobs:
           - java8_python2
           - java11_python3
     steps:
+      - name: downcase REPO
+        run: |
+          echo "REPO=${GITHUB_REPOSITORY,,}" >>${GITHUB_ENV}
       - uses: actions/checkout@v2
       - uses: docker/setup-buildx-action@v1
         with:
@@ -36,4 +39,4 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/yolks:cassandra_${{ matrix.tag }}
+            ghcr.io/${{ env.REPO }}/yolks:cassandra_${{ matrix.tag }}
